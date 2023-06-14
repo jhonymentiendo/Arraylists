@@ -1,6 +1,7 @@
 package part1.challenge;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,23 +27,48 @@ public class GroceryListChallenge {
 		System.out.println("************************");
 	}
 	
+	public static void agregaElemento() {
+		String item;
+		System.out.println("agrega un elemento :");
+		item = sn.next();
+		if(!groceries.contains(item)) {
+			groceries.add(item);
+		}else System.out.println(item + " ya existe");
+	}
+	
+	public static void removerElemento() {
+		String item;
+		System.out.println("remover un elemento :");
+		item = sn.next();
+		if(groceries.contains(item)) {
+			groceries.remove(item);
+		}else System.out.println(item + " no existe");
+	}
+	
+	public static void imprimirLista() {
+		ArrayList<String> groceriesordenada = new ArrayList<String>(groceries);
+		groceriesordenada.sort(Comparator.naturalOrder());
+		System.out.println(groceriesordenada);
+	}
+	
 	public static boolean arrancaApp() {
 	boolean resp = true;
 		pintamenu();
 		
 		switch (sn.next()) {
 			case "1": {
-				System.out.println("agrega un elemento :");
-				groceries.add(sn.next());
+				agregaElemento();
 				break;
 			}
 			case "2": {
-				System.out.println("agrega un elemento :");
-				groceries.removeAll(List.of(sn.next()));
+				removerElemento();
+				/*System.out.println("agrega un elemento :");
+				groceries.removeAll(List.of(sn.next()));*/
 				break;
 			}
 			case "3": {
-				System.out.println(groceries);
+				imprimirLista();
+				//System.out.println(groceries);
 				break;
 			}
 			case "q": {
