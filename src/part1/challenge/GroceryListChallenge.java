@@ -11,11 +11,7 @@ public class GroceryListChallenge {
 	static ArrayList<String> groceries = new ArrayList<String>();
 	
 	public static void main(String[] args) {
-		
-		
 		while(arrancaApp()) {}
-		
-		
 	}
 
 	public static void pintamenu() {
@@ -62,13 +58,10 @@ public class GroceryListChallenge {
 			}
 			case "2": {
 				removerElemento();
-				/*System.out.println("agrega un elemento :");
-				groceries.removeAll(List.of(sn.next()));*/
 				break;
 			}
 			case "3": {
 				imprimirLista();
-				//System.out.println(groceries);
 				break;
 			}
 			case "q": {
