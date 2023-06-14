@@ -15,7 +15,8 @@ public class Main {
 		groceryList.add(new GroceryItem("mantequilla"));
 		groceryList.add(new GroceryItem("manzanas", "Frutas", 20));
 		
-		//groceryList.remove(0);
+		
+		
 		
 		System.out.println(groceryList);
 		
